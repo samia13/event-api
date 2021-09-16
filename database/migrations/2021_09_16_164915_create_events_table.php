@@ -16,7 +16,9 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
             $table->string('title');
             $table->string('slug');
             $table->text('content');

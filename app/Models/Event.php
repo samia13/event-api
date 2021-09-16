@@ -12,7 +12,7 @@ class Event extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'start_at' =>'datetime ',
+        'start_at' =>'datetime',
         'ends_at' => 'datetime'
     ];
 

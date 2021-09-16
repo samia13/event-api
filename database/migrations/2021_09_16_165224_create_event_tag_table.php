@@ -15,8 +15,12 @@ class CreateEventTagTable extends Migration
     public function up()
     {
         Schema::create('event_tag', function (Blueprint $table) {
-            $table->foreignIdFor(Event::class);
-            $table->foreignIdFor(Tag::class);
+            $table->foreignIdFor(Event::class)                  
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+            $table->foreignIdFor(Tag::class)
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
         });
     }
 
