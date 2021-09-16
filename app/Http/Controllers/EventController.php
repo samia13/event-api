@@ -12,7 +12,7 @@ class EventController extends Controller
     public function __construct()
     {
         // only logged in users should be able to create and store an event
-        $this->middleware('auth', ['only'=>[
+        $this->middleware('auth:sanctum', ['only'=>[
             'create', 'store'
         ]]) ;   
     }
