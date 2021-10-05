@@ -45,7 +45,7 @@ class EventController extends Controller
             'slug' => Str::slug($request->title),
             'content' => $request->title,
             'premium' => $request->filled('premium'),
-            'start-at' => $request->start_at,
+            'start_at' => $request->start_at,
             'ends_at' => $request->ends_at,
         ]);
         // create tags if any, then associate it to events
